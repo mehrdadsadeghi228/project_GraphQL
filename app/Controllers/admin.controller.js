@@ -1,5 +1,5 @@
 const Controller = require("./controller");
-const { StatusCodes:HttpStatus} = require("http-status-codes")
+const {StatusCodes} = require("http-status-codes")
 const createError = require("http-errors");
 
 class AdminController extends Controller{

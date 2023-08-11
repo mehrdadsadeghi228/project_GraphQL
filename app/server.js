@@ -1,7 +1,9 @@
 const express=require('express');
 const {mongoose}=require('mongoose');
-const {AllRoutes}=require('./routers/routers');
+const {AllRouters}=require('./routers/routers');
 const path= require("path");
+const cors = require("cors");
+const morgan = require('morgan');
 
 
 module.exports=class Application{
@@ -78,7 +80,7 @@ module.exports=class Application{
     }
     
     createRoutes(){
-        this.#app.use(AllRoutes);
+        this.#app.use(AllRouters);
 
     }
 
