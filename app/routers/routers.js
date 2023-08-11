@@ -1,11 +1,15 @@
-const {AdminController} = require('../Controllers/admin.controller');
+const { route } = require('express/lib/router');
+const { AdminRouter } = require('./admin.router');
+const Route = require('express/lib/router/route');
+const { graphqlHTTP } = require('express-graphql');
+const { graphQL_config } = require('../utills/graphql.config');
 
-const Router=require('express').Router();
+const Router = require('express').Router();
 
-Router.get("/",AdminController.adminIndex);
-
-module.exports={
-    AllRouters:Router
+Router.use("/admin", AdminRouter);
+Router.use("/graphql", graphqlHTTP(graphQL_config));
+module.exports = {
+    AllRouters: Router
 };
 
 
