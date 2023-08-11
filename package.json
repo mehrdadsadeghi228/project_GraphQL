@@ -1,0 +1,26 @@
+{
+    "scripts": {
+        "start": "nodemon app.js"
+    },
+    "version": "1.0.0",
+    "author": "mehrdad",
+    "description": "Training project for GraphQl",
+    "license": "ISC",
+    "repository": {
+        "type": "git",
+        "url": ""
+    },
+    "dependencies": {
+        "auto-bind": "^5.0.1",
+        "body-parser": "^1.20.2",
+        "cookie-parser": "^1.4.6",
+        "cors": "^2.8.5",
+        "dotenv": "^16.3.1",
+        "express": "^4.18.2",
+        "http": "^0.0.1-security",
+        "http-errors": "^2.0.0",
+        "http-status-codes": "^2.2.0",
+        "morgan": "^1.10.0",
+        "nodemon": "^3.0.1"
+    }
+}
