@@ -5,8 +5,8 @@ const { AuthorResolver } = require('./queries/queries');
 const RootQuery= new GraphQLObjectType({
     name:'RootQuery',
     fields:{    
-        Author: AuthorResolver,
-        Books:BookResolver
+        Author:AuthorResolver,
+       // Books:BookResolver
 
     }
 });
