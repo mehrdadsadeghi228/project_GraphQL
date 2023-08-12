@@ -3,7 +3,9 @@ const { AuthorBlogs } = require('./Author.type');
 
 module.exports =new GraphQLObjectType({
   name: 'BookBlogs',
-  fields: {
+  fields:
+  { 
+      _id:{type:GraphQLString},
       title: { type: GraphQLString },
       description: { type: GraphQLString },
       image: { type: GraphQLString },

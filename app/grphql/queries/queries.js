@@ -2,19 +2,9 @@ const { BookModel } = require("../../model/Book.models");
 const BookType  = require("../typedf/Book.type");
 const { AuthorBlogs } = require("../typedf/Author.type");
 const { AuthorModel } = require("../../model/Author.Model");
-const { GraphQLObjectType } = require("graphql/type/definition");
-const { GraphQLList } = require("graphql");
+const { GraphQLList, GraphQLString } = require("graphql");
 
-const BookResolver = {
-        type :  new GraphQLList(BookType),
-        resolve : async () => {
-        console.log("have request for book ");
-        const BookValue = await BookModel.find();
-        console.log("have request for book ",BookValue);
-        return BookValue
-        }
 
-};
 
 const AuthorResolver = {
     type : new GraphQLList(AuthorBlogs),
@@ -25,7 +15,24 @@ const AuthorResolver = {
 
     
 };
+
+const PickUpBookResolver = {
+    type :  new GraphQLList(BookType),
+    args:{
+        title:{ type : GraphQLString }
+    },
+    resolve : async (_,args) => {
+    const {title} = args
+    console.log("have request for  PickUpBookResolver",title);
+    ({"username" : {$regex : "son"}});
+    const PickUpBookValue = await BookModel.find({"title" : {$regex : title}});
+    console.log("have request for PickUpBookResolver Value: ",PickUpBookValue);
+    return PickUpBookValue
+    }
+
+};
+
 module.exports = {
-    BookResolver,
-    AuthorResolver
+    AuthorResolver,
+    PickUpBookResolver
 };
