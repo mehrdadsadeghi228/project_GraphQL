@@ -1,12 +1,13 @@
 const { GraphQLObjectType, GraphQLSchema, GraphQLFloat, GraphQLInt, GraphQLString }=require('graphql');
-const { BookResolver } = require('./queris/blog.query');
+const  BookResolver = require('./queris/blog.query');
 
 const RootQuery= new GraphQLObjectType({
     name:'RootQuery',
     fields:{    
-       books:BookResolver
+       books:BookResolver()
     }
 });
+
 const RootMutation=new GraphQLObjectType(
     {
         name:'RootMutation',

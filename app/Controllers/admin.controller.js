@@ -12,6 +12,7 @@ class AdminController extends Controller{
             statusCode:StatusCodes.OK,
             message: 'Hello Admin',
         });
+        
     } catch (error) {
         console.log(error);
         res.status(HttpStatus.INTERNAL_SERVER_ERROR).json({
@@ -19,7 +20,7 @@ class AdminController extends Controller{
         })
      };
     }
-    async addBook(res,req,next){
+    async postAddBook(res,req,next){
 
         try {
          console.log(req.body);
@@ -54,7 +55,7 @@ class AdminController extends Controller{
  
          
      }
-     async addAuthor(res,req,next){
+     async postAddAuthor(res,req,next){
 
         try {
          console.log(req.body);
