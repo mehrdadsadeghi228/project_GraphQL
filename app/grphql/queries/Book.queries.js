@@ -12,6 +12,7 @@ const AllBookResolver = {
     }
 
 };
+
 const searchOnCategoryBookResolver = {
     type: new GraphQLList(BookType),
     args:{
