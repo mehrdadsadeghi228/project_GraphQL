@@ -20,7 +20,7 @@ const searchOnCategoryBookResolver = {
     },
     resolve: async (_,args) => {
         const {categoryItem}=args;
-        console.log("have request for serching in Category ");
+        console.log("have request for searching in Category ");
         const BookValue = await BookModel.find( { category : { $in : categoryItem } } );
         console.log("have request for book ", BookValue);
         return BookValue

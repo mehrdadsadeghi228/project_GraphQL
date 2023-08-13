@@ -7,6 +7,7 @@ module.exports =new GraphQLObjectType({
   { 
       _id:{type:GraphQLString},
       title: { type: GraphQLString },
+      author:{type:AuthorBlogs},
       description: { type: GraphQLString },
       image: { type: GraphQLString },
       publisher: { type: GraphQLString },
