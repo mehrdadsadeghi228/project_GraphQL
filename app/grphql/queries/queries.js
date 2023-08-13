@@ -23,10 +23,7 @@ const PickUpBookResolver = {
     },
     resolve : async (_,args) => {
     const {title} = args
-    console.log("have request for  PickUpBookResolver",title);
-    ({"username" : {$regex : "son"}});
     const PickUpBookValue = await BookModel.find({"title" : {$regex : title}});
-    console.log("have request for PickUpBookResolver Value: ",PickUpBookValue);
     return PickUpBookValue
     }
 

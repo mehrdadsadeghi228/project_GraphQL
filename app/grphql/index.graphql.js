@@ -1,13 +1,14 @@
 const { GraphQLObjectType, GraphQLSchema, GraphQLFloat, GraphQLInt, GraphQLString } = require('graphql');
 const { AuthorResolver, PickUpBookResolver } = require('./queries/queries');
-const { AllBookResolver } = require('./queries/Book.queries');
+const { AllBookResolver, AddBookResolver } = require('./queries/Book.queries');
 
 const RootQuery = new GraphQLObjectType({
     name: 'RootQuery',
     fields: {
         Author: AuthorResolver,
         Books: AllBookResolver,
-        PickUpBook: PickUpBookResolver
+        PickUpBook: PickUpBookResolver,
+        AddingBook:AddBookResolver
     }
 });
 
