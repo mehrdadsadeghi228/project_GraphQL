@@ -21,7 +21,7 @@ const AddBookResolver = {
         title: { type: GraphQLString },
         description: { type: GraphQLString },
         image: { type: GraphQLString },
-        category:{type:GraphQLList(GraphQLString)},
+        category:{type:new GraphQLList(GraphQLString)},
         publisher: { type: GraphQLString },
         price: { type: GraphQLInt },
         stock: { type: GraphQLInt },
@@ -37,7 +37,7 @@ const AddBookResolver = {
             isAvailable:isAvailable,version:version
         });
         console.log("book save with id : ", BookValue._id);
-        return BookValue
+        return {"book is save with id :":BookValue._id}
     }
 
 };

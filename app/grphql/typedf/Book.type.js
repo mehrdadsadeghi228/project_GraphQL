@@ -1,4 +1,4 @@
-const {GraphQLString, GraphQLObjectType , GraphQLBoolean, GraphQLInt } = require('graphql');
+const {GraphQLString, GraphQLObjectType , GraphQLBoolean, GraphQLInt, GraphQLList } = require('graphql');
 const { AuthorBlogs } = require('./Author.type');
 
 module.exports =new GraphQLObjectType({
@@ -13,7 +13,10 @@ module.exports =new GraphQLObjectType({
       price: { type: GraphQLInt },
       stock: { type: GraphQLInt },
       isAvailable: { type: GraphQLBoolean },
-      version: { type: GraphQLInt }
+      version: { type: GraphQLInt },
+      category:{type:new GraphQLList(GraphQLString)},
+      author:{type:AuthorBlogs},
+
   }
 
 });
