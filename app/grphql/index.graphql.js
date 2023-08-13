@@ -1,6 +1,6 @@
 const { GraphQLObjectType, GraphQLSchema, GraphQLFloat, GraphQLInt, GraphQLString } = require('graphql');
 const { AuthorResolver, PickUpBookResolver } = require('./queries/queries');
-const { AllBookResolver, AddBookResolver } = require('./queries/Book.queries');
+const { AllBookResolver, AddBookResolver, searchOnCategoryBookResolver } = require('./queries/Book.queries');
 
 const RootQuery = new GraphQLObjectType({
     name: 'RootQuery',
@@ -8,7 +8,8 @@ const RootQuery = new GraphQLObjectType({
         Author: AuthorResolver,
         Books: AllBookResolver,
         PickUpBook: PickUpBookResolver,
-        AddingBook:AddBookResolver
+        AddingBook:AddBookResolver,
+        searchOnCategory:searchOnCategoryBookResolver
     }
 });
 

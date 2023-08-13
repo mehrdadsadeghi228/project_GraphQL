@@ -12,7 +12,20 @@ const AllBookResolver = {
     }
 
 };
+const searchOnCategoryBookResolver = {
+    type: new GraphQLList(BookType),
+    args:{
+        categoryItem:{type:new GraphQLList(GraphQLString)}
+    },
+    resolve: async (_,args) => {
+        const {categoryItem}=args;
+        console.log("have request for serching in Category ");
+        const BookValue = await BookModel.find( { category : { $in : categoryItem } } );
+        console.log("have request for book ", BookValue);
+        return BookValue
+    }
 
+};
 
 const AddBookResolver = {
     type: new GraphQLList(BookType),
@@ -43,5 +56,6 @@ const AddBookResolver = {
 };
 module.exports = {
     AllBookResolver,
-    AddBookResolver
+    AddBookResolver,
+    searchOnCategoryBookResolver
 }
