@@ -16,7 +16,7 @@ module.exports =new GraphQLObjectType({
       isAvailable: { type: GraphQLBoolean },
       version: { type: GraphQLInt },
       category:{type:new GraphQLList(GraphQLString)},
-      author:{type:AuthorBlogs},
+      author:{type:AuthorBlogs}
 
   }
 

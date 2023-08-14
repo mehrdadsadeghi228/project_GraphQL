@@ -1,5 +1,5 @@
 const { default: mongoose } = require("mongoose");
-const { BookModel } = require("./Book.model");
+const { BookModel } = require("./Book.models");
 const { userModel } = require("./user.model");
 
 const commentSchema=new mongoose.Schema({

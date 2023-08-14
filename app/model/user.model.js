@@ -1,6 +1,6 @@
 const { default: mongoose } = require("mongoose");
 const { AuthorModel } = require("./Author.Model");
-const { BookModel } = require("./Book.model");
+const { BookModel } = require("./Book.models");
 
 const userSchema=new mongoose.Schema({
     userName:{type:String,require:true},
