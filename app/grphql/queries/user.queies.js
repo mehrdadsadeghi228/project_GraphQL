@@ -52,9 +52,9 @@ const AddUserFavoriteBookResolver = {
 
     resolve: async (_, args) => {
         const { favorite_Book,favorite_author,userName,id } = args
-        const user=await userModel.find( { { userName:{$regex : userName } } , { _id:{$regex : id } } } );
+        const user=await userModel.find(  { userName:{$regex : userName } } , { _id:{$regex : id }  } );
         if(!user) throw new createError.BadRequest(" Client is exist !");
-        const userValue = await userModel.findByIdAndUpdate({_id{$regex : title}});
+        const userValue = await userModel.findByIdAndUpdate({_id:{$regex : title},});
 
         return userValue
     }
