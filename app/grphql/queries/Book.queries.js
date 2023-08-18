@@ -1,5 +1,5 @@
 const { GraphQLList, GraphQLString, GraphQLInt, GraphQLBoolean } = require("graphql");
-const BookType = require("../typedf/Book.type");
+const BookType = require("../typedef/typedef");
 const { BookModel } = require("../../model/Book.models");
 
 const AllBookResolver = {

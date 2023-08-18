@@ -1,11 +1,11 @@
 const { GraphQLList, GraphQLString } = require("graphql");
 const commentModel = require("../../model/comment.model");
 const { userModel } = require("../../model/user.model");
-//const { commentTypeGraphQl } = require("../typedf/comment.type");
-const { userTypeGraphQl } = require("../typedf/user.type");
+//const { commentTypeGraphQl } = require("../typedef/comment.type");
+const { userTypeGraphQl } = require("../typed/user.type");
 const createError = require("http-errors");
-const { AuthorBlogs } = require("../typedf/Author.type");
-const BookType = require("../typedf/Book.type");
+const { AuthorBlogs } = require("../typedef/Author.type");
+const BookType = require("../typedef/typedef");
 
 const userResolver = {
     type: new GraphQLList(userTypeGraphQl),
