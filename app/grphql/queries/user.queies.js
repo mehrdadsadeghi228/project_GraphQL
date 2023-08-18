@@ -53,7 +53,6 @@ const AddUserResolver = {
 
 };
 
-8
 const AddUserFavoriteBookResolver = {
     type: new GraphQLList(userTypeGraphQl),
 
