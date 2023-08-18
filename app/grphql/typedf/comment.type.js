@@ -17,6 +17,3 @@ const commentTypeGraphQl=new GraphQLObjectType({
     
 });
 
-module.exports={
-    commentTypeGraphQl
-}
