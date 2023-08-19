@@ -1,31 +1,34 @@
 const { GraphQLObjectType, GraphQLSchema, GraphQLFloat, GraphQLInt, GraphQLString } = require('graphql');
-const { AuthorResolver, PickUpBookResolver } = require('./queries/queries');
-const { AllBookResolver, AddBookResolver, searchOnCategoryBookResolver } = require('./queries/Book.queries');
-const { userResolver, AddUserResolver, AddUserFavoriteBookResolver } = require('./queries/user.queies');
+const { AllBookResolver, SearchBookByTitleResolver, searchOnCategoryBookResolver } = require('./queries/Book.queries');
+const { getAllUserResolver } = require('./queries/user.queries');
+const { AuthorResolver } = require('./queries/author.queries');
+const { AddBookMutations } = require('./mutation/book.mutations');
+const { AddUserFavoriteBookMutations,AddUserMutations } = require('./mutation/user.mutations');
 
 const RootQuery = new GraphQLObjectType({
     name: 'RootQuery',
     fields: {
         Author: AuthorResolver,
         Books: AllBookResolver,
-        PickUpBook: PickUpBookResolver,
-        AddingBook:AddBookResolver,
-        searchOnCategory:searchOnCategoryBookResolver,
-        getUser:userResolver,
-        addUser:AddUserResolver,
-        Add_Fav:AddUserFavoriteBookResolver,
+        searchBookByTitle: SearchBookByTitleResolver,
+        searchBookOnCategory:searchOnCategoryBookResolver,
+        getUser:getAllUserResolver,
     }
 });
 
 const RootMutation = new GraphQLObjectType(
     {
         name: 'RootMutation',
-        fields: {}
+        fields: {
+            AddBookMutations,
+            //AddUserMutations,
+            //AddUserFavoriteBookMutations
+        }
     }
 );
 const GRAPH_QL_SCHEMA = new GraphQLSchema({
     query: RootQuery,
-    //  mutation:RootMutation
+    mutation:RootMutation
 });
 
 module.exports = {
