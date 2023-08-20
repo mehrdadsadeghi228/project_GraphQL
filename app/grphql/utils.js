@@ -49,7 +49,7 @@ function toObject(value){
 }
 async function checkExistAuthor(id){
     const course =  await AuthorModel.findById(id);
-    if(!course) throw createHttpError.NotFound("دوره ای با این مشخصات یافت نشد")
+    if(!course) throw createHttpError.NotFound("نویسنده ای  ای با این مشخصات یافت نشد")
     return course
 }
 async function checkExistBook(id){
@@ -57,12 +57,16 @@ async function checkExistBook(id){
     if(!product) throw createHttpError.NotFound("محصولی با این مشخصات یافت نشد")
     return product
 }
-async function checkExistUser(id){
-    const blog =  await userModel.findById(id);
-    if(!blog) throw createHttpError.NotFound("بلاگی با این مشخصات یافت نشد")
+async function checkExistUserName(id,userName){
+    const blog =  await userModel.findOne({userName:userName});
+    if(!blog) throw createHttpError.NotFound("کاربری  با این اسم  یافت نشد")
     return blog
 }
-
+async function checkExistUser(id){
+    const blog =  await userModel.findById(id);
+    if(!blog) throw createHttpError.NotFound("کاربری  با این ایدی  یافت نشد")
+    return blog
+}
 
 module.exports = {
     toObject,
@@ -71,5 +75,6 @@ module.exports = {
     parseObject,
     checkExistAuthor,
     checkExistBook,
-    checkExistUser
+    checkExistUser,
+    checkExistUserName
 }

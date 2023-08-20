@@ -6,7 +6,10 @@ const {commentTypeGraphQl}  = require("./comment.type");
 const userTypeGraphQl=new GraphQLObjectType({
     name: 'userTypeGraphQl',
     fields:
-    {   _id: {type: GraphQLString},
+    
+    {
+        userName:{type:GraphQLString},   
+        _id: {type: GraphQLString},
         name:{type:GraphQLString},
         lastName:{type:GraphQLString},
         email:{type:GraphQLString},
