@@ -25,3 +25,17 @@ const BookBlogsType =new GraphQLObjectType({
 module.exports ={
   BookBlogsType
 }
+
+/***
+ * 
+ *   title: { type: GraphQLString },
+        author:{type:new  GraphQLList(AuthorBlogsType)},
+        description: { type: GraphQLString },
+        image: { type: GraphQLString },
+        category:{type:new GraphQLList(GraphQLString)},
+        publisher: { type: GraphQLString },
+        price: { type: GraphQLInt },
+        stock: { type: GraphQLInt },
+        isAvailable: { type: GraphQLBoolean },
+        version: { type: GraphQLInt }
+ */

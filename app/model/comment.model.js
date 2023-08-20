@@ -7,8 +7,8 @@ const commentSchema=new mongoose.Schema({
     descriptionComment:{type:String,require:true},
     likeComment:{type:Boolean},
     disLikeComment:{type:Boolean},
-    BookRef:{type:mongoose.Types.ObjectId,ref:'BookModel',require:true},
-    userRef:{type:mongoose.Types.ObjectId,ref:'userModel',require:true},
+    BookRef:{type:mongoose.Types.ObjectId,ref:'BookSchema',require:true},
+    userRef:{type:mongoose.Types.ObjectId,ref:'userSchema',require:true},
 },{
     timestamps:true
 });

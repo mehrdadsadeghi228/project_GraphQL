@@ -27,6 +27,7 @@ const getAllUserResolver = {
 
 
 
+
 module.exports={
-    getAllUserResolver
+    getAllUserResolver,
 }

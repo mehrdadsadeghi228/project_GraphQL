@@ -3,7 +3,7 @@ const { AllBookResolver, SearchBookByTitleResolver, searchOnCategoryBookResolver
 const { getAllUserResolver } = require('./queries/user.queries');
 const { AuthorResolver } = require('./queries/author.queries');
 const { AddBookMutations } = require('./mutation/book.mutations');
-const { AddUserFavoriteBookMutations,AddUserMutations } = require('./mutation/user.mutations');
+const { AddUserFavoriteBookMutations,AddUserMutations ,getUserFavoriteMutations} = require('./mutation/user.mutations');
 
 const RootQuery = new GraphQLObjectType({
     name: 'RootQuery',
@@ -22,8 +22,9 @@ const RootMutation = new GraphQLObjectType(
         fields: {
             AddBookMutations,
             AddUserMutations,
-            AddUserFavoriteBookMutations
-        }
+            AddUserFavoriteBookMutations,
+            getUserFavoriteMutations
+                }
     }
 );
 const graphQLSchema = new GraphQLSchema({

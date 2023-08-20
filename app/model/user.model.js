@@ -8,7 +8,7 @@ const userSchema=new mongoose.Schema({
     lastName:{type:String,require:true},
     email:{type:String,require:true},
     favorite_author:{type:[mongoose.Types.ObjectId],ref:'AuthorModel',require:false},
-    favorite_Book:{type:[mongoose.Types.ObjectId],ref:'BookModel',require:false},
+    favorite_Book:{type:[mongoose.Types.ObjectId],ref:'BookSchema',require:false},
   
 
 

@@ -126,7 +126,38 @@ const AddUserFavoriteBookMutations = {
     }
 }
 
+
+
+
+const getUserFavoriteMutations = {
+    type: ResponseType,
+    args:{
+        _id:{type:GraphQLString}
+    },
+    resolve: async (_,args) => {
+        
+            const {_id}=args
+            console.log(" user: ");
+            checkExistUser(_id);
+            const UserResponsive = await userModel.findById(_id).populate([
+                                                            {path:'favorite_author'},
+                                                            {path:"favorite_Book"}
+                                                        ]);
+
+            console.log(" user: ",UserResponsive);
+            return{
+                statusCode:202,
+                data:UserResponsive
+            } 
+
+
+
+      }
+
+};
+
 module.exports={
     AddUserMutations,
-    AddUserFavoriteBookMutations
+    AddUserFavoriteBookMutations,
+    getUserFavoriteMutations
 }
