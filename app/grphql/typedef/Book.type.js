@@ -1,5 +1,5 @@
 const {GraphQLString, GraphQLObjectType , GraphQLBoolean, GraphQLInt, GraphQLList } = require('graphql');
-const { AuthorBlogs } = require('./Author.type');
+const { AuthorBlogsType } = require('./Author.type');
 
 const BookBlogsType =new GraphQLObjectType({
   name: 'BookBlogsType',
@@ -7,7 +7,6 @@ const BookBlogsType =new GraphQLObjectType({
   { 
       _id:{type:GraphQLString},
       title: { type: GraphQLString },
-      author:{type: AuthorBlogs},
       description: { type: GraphQLString },
       image: { type: GraphQLString },
       publisher: { type: GraphQLString },
@@ -16,6 +15,8 @@ const BookBlogsType =new GraphQLObjectType({
       isAvailable: { type: GraphQLBoolean },
       version: { type: GraphQLInt },
       category:{type:new GraphQLList(GraphQLString)},
+      author:{type: new  GraphQLList(AuthorBlogsType)},
+
 
   }
 

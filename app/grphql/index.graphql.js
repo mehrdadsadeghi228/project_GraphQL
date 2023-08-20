@@ -18,7 +18,7 @@ const RootQuery = new GraphQLObjectType({
 
 const RootMutation = new GraphQLObjectType(
     {
-        name: 'RootMutation',
+        name: "Mutation",
         fields: {
             AddBookMutations,
             //AddUserMutations,
@@ -26,11 +26,11 @@ const RootMutation = new GraphQLObjectType(
         }
     }
 );
-const GRAPH_QL_SCHEMA = new GraphQLSchema({
+const graphQLSchema = new GraphQLSchema({
     query: RootQuery,
-    mutation:RootMutation
-});
+    mutation: RootMutation
+})
 
 module.exports = {
-    GRAPH_QL_SCHEMA
+    graphQLSchema
 }

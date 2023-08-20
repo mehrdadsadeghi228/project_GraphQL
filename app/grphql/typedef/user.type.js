@@ -1,7 +1,7 @@
 const { GraphQLObjectType, GraphQLString, GraphQLList, graphql } = require("graphql");
 const { AuthorBlogsType } = require("./Author.type");
 const { BookBlogsType } = require("./Book.type");
-const commentTypeGraphQl  = require("./comment.type");
+const {commentTypeGraphQl}  = require("./comment.type");
 
 const userTypeGraphQl=new GraphQLObjectType({
     name: 'userTypeGraphQl',
@@ -16,6 +16,8 @@ const userTypeGraphQl=new GraphQLObjectType({
     }
     
 })
-module.exports={
+
+module.exports = {
+    
     userTypeGraphQl
 }

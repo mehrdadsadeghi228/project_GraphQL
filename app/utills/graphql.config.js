@@ -1,9 +1,9 @@
-const { GRAPH_QL_SCHEMA } = require("../grphql/index.graphql");
+const { graphQLSchema } = require("../grphql/index.graphql");
 
 
 function graphqlConfig(req, res){
     return {
-        schema: GRAPH_QL_SCHEMA,
+        schema: graphQLSchema,
         graphiql: true,
         context: {req, res}
     }
@@ -11,4 +11,5 @@ function graphqlConfig(req, res){
 
 module.exports = {
     graphqlConfig
+    
 }

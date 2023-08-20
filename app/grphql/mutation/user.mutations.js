@@ -2,13 +2,11 @@
 const { GraphQLList, GraphQLString } = require("graphql");
 const commentModel = require("../../model/comment.model");
 const { userModel } = require("../../model/user.model");
-//const { commentTypeGraphQl } = require("../typedef/comment.type");
 const createError = require("http-errors");
 const { AuthorBlogsType } = require("../typedef/Author.type");
-const { userTypeGraphQl } = require("../typedef/user.type");
 const { BookBlogsType } = require("../typedef/Book.type");
 const { commentTypeGraphQl } = require("../typedef/comment.type");
-const { AnyType, ResponseType } = require("../typedef/public.type");
+const {  ResponseType } = require("../typedef/public.type");
 
 
 
